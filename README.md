@@ -45,7 +45,7 @@ auto-generated FAQ specific to that document.
 
 The result is rendered as a clean, structured analysis page instead of a wall of legal text —
 turning a confusing notice into something a citizen can actually act on. The current build is
-a frontend-only React application that calls the Gemini API directly, deployed on Vercel. It
+a frontend-only React application that calls the Gemini API directly, deployed on Netlify. It
 is a working MVP built to demonstrate the core loop — upload, understand, act — with a clear
 roadmap toward authentication, document history, and a government scheme recommendation
 engine as it matures beyond the hackathon stage.
@@ -93,7 +93,7 @@ directly to Google's Gemini API — no custom backend is required for the curren
 | Technology | Purpose |
 |---|---|
 | **ESLint** | Static analysis / lint checks during development |
-| **Vercel** | Hosting and CI/CD for the production build |
+| **Netlify** | Hosting and CI/CD for the production build |
 
 > The original proposal scoped a fuller stack (Node.js/Express backend, PostgreSQL, an OCR
 > engine, JWT/OAuth2 auth, cloud hosting). For this MVP, scope was deliberately narrowed to a
@@ -196,14 +196,13 @@ Create a `.env` file in `frontend/` with:
 
 ## Deployment
 
-The app is deployed on **Vercel**:
+The app is deployed on **Netlify**:
 
 | Setting | Value |
 |---|---|
-| Framework preset | Vite |
 | Build command | `npm run build` |
-| Output directory | `dist` |
-| Environment variable | `VITE_GEMINI_API_KEY` set in Vercel project settings |
+| Publish directory | `dist` |
+| Environment variable | `VITE_GEMINI_API_KEY` set in Netlify Site settings → Environment variables |
 
 ---
 
